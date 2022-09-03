@@ -50,6 +50,11 @@ export const Container = styled.main`
   justify-content: space-around;
   align-items: center;
   background-color: #f5f5f5;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+
 `
 
 export const TextContainer = styled.div`
@@ -86,4 +91,8 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `

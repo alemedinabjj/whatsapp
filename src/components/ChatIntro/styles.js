@@ -29,4 +29,8 @@ export const ChatIntro = styled.div`
     text-align: center;
   }
 
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;

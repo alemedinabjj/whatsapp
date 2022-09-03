@@ -16,6 +16,10 @@ export const NewChat = styled.div`
   &.newChat--hide {
     left: -415px;
   }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `
 
 export const NewChatHeader = styled.div`

@@ -47,16 +47,36 @@ export const Sidebar = styled.aside`
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ddd;
+  
+
+
+
+  @media (max-width: 900px) {
+    position: fixed;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    z-index: 3;
+    display: ${props => props.display };
+  }
 `
 
 export const AppWindow = styled.main`
   display: flex;
   height: 100vh;
   background: var(--bg-color-secondary);
+  width: 100%;
+
+
 `
 
 export const ContentArea = styled.section`
   flex: 1;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `
 
 export const Header = styled.header`
@@ -65,6 +85,7 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+
 
   > img {
     width: 40px;

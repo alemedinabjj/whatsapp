@@ -4,6 +4,19 @@ export const ChatWindow = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  
+  @media (max-width: 900px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    z-index: 5;
+    transition: all 0.3s ease-in-out;
+  }
+
 `
 
 export const ChatWindowHeader = styled.div`
@@ -12,6 +25,17 @@ export const ChatWindowHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .buttonMobileBack {
+      display: none;
+    }
+
+  @media (max-width: 900px) {
+    .buttonMobileBack {
+      display: block;
+    }
+
+  }
 `
 
 export const ChatWindowBody = styled.div`

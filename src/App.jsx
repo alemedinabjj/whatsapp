@@ -19,8 +19,11 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 export default () => {
   const [chatlist, setChatList] = useState([]) // Lista de contatos
   const [activeChat, setActiveChat] = useState({}) // Contato ativo
+  
 
   const [user, setUser] = useState(null)
+
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   
 
@@ -35,6 +38,10 @@ export default () => {
 
   const handleNewChat = () => {
     setShowNewChat(true)
+  }
+
+  const handleClickChat = () => {
+    setActiveChat(chatlist[key])
   }
 
   const handleLoginData = async u => {
@@ -56,7 +63,7 @@ export default () => {
     <>
       <Global styles={GlobalStyles} />
       <S.AppWindow>
-        <S.Sidebar>
+        <S.Sidebar display={mobileOpen ? 'none' : 'flex'} >
           <NewChat
             chatlist={chatlist}
             user={user}
@@ -94,6 +101,7 @@ export default () => {
                 data={item}
                 active={activeChat.chatId === chatlist[key].chatId}
                 onClick={() => setActiveChat(chatlist[key])}
+                onMobileClick={() => setMobileOpen(true)}
               />
             ))}
           </S.ChatList>
@@ -101,7 +109,7 @@ export default () => {
 
         <S.ContentArea>
           {activeChat.chatId !== undefined && (
-            <ChatWindow user={user} data={activeChat} />
+            <ChatWindow user={user} data={activeChat} setMobileOpen={setMobileOpen} mobileOpen={mobileOpen} />
           )}
 
           {activeChat.chatId === undefined && <ChatIntro />}

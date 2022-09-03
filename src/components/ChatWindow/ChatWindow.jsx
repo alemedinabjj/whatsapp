@@ -14,7 +14,7 @@ import { useState, useEffect, useRef } from 'react'
 import { BoyOutlined } from '@mui/icons-material'
 import Api from '../../Api'
 
-export default ({ user, data }) => {
+export default ({ user, data, mobileOpen, setMobileOpen }) => {
   let recognition = null
   let SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition
@@ -29,6 +29,7 @@ export default ({ user, data }) => {
   const [listening, setListening] = useState(false)
   const [list, setList] = useState([]) // Lista de mensagens
   const [users, setUsers] = useState([]) // Lista de usuários
+
 
   useEffect(() => {
     if (body.current.scrollHeight > body.current.offsetHeight) {
@@ -85,10 +86,17 @@ export default ({ user, data }) => {
     }
   }
 
+  const handleBack = () => {
+    setMobileOpen(!mobileOpen)
+  }
+
   return (
-    <S.ChatWindow>
+    <S.ChatWindow style={{ transform: !mobileOpen ? "translateX(-2200px)" : '' }}>
       <S.ChatWindowHeader>
         <S.ChatWindowHeaderInfo>
+          <div className="buttonMobileBack" onClick={handleBack}>
+            Back
+          </div>
           <img src={data.image} alt="" />
           <S.ChatWindowHeaderInfoName>{data.title}</S.ChatWindowHeaderInfoName>
         </S.ChatWindowHeaderInfo>
