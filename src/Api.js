@@ -14,6 +14,16 @@ export default {
     let result = await firebaseApp.auth().signInWithPopup(provider)
     return result
   },
+  googlePopup: async () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    let result = await firebaseApp.auth().signInWithPopup(provider)
+    return result
+  },
+  githubPopup: async () => {
+    const provider = new firebase.auth.GithubAuthProvider()
+    let result = await firebaseApp.auth().signInWithPopup(provider)
+    return result
+  },
   addUser: async user => {
     await db.collection('users').doc(user.id).set(
       {
