@@ -1,6 +1,6 @@
 export default {
   apiKey: 'AIzaSyA6cxRCj9_jQJnN_7TGz2AV1KKdOVQC5vc',
-  authDomain: 'whatsappclone-42556.firebaseapp.com',
+  authDomain: 'https://whatsapp-gray.vercel.app/',
   projectId: 'whatsappclone-42556',
   storageBucket: 'whatsappclone-42556.appspot.com',
   messagingSenderId: '27640341004',
