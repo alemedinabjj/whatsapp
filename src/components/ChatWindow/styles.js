@@ -14,7 +14,7 @@ export const ChatWindow = styled.div`
     height: 100%;
     flex: 1;
     z-index: 5;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
 
 `
