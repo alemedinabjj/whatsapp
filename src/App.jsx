@@ -13,11 +13,16 @@ import NewChat from './components/NewChat/NewChat'
 import Login from './components/Login/Login'
 import Api from './Api'
 
+import { useAuthState } from 'react-firebase-hooks/auth'
+
+
 export default () => {
   const [chatlist, setChatList] = useState([]) // Lista de contatos
   const [activeChat, setActiveChat] = useState({}) // Contato ativo
 
   const [user, setUser] = useState(null)
+
+  
 
   const [showNewChat, setShowNewChat] = useState(false) // Mostrar ou não o componente NewChat
 
@@ -43,7 +48,7 @@ export default () => {
     console.log(newUser)
   }
 
-  if (user === null) {
+  if (!user) {
     return <Login onReceive={handleLoginData} />
   }
 

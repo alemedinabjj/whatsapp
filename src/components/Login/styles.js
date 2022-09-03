@@ -1,26 +1,89 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const Button = styled.button`
-  //create facebook button login
-  background: #3b5998;
-  color: #fff;
-  border: 0;
-  border-radius: 4px;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: bold;
+  border: none;
+  outline: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 
-  &:hover {
-    background: #2f4779;
-  }
-`
-
-export const Login = styled.div`
+  width: 354px;
+  height: 54px;
+  border-radius: 10px;
+  padding: 14px;
+  background:${props => props.background};
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background:${props => props.hover};
+  }
+  
+
+  span {
+    font-family: "Helvetica", sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    color: #ffff;
+  }
+`
+
+
+
+export const Login = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+`
+
+export const Container = styled.main`
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100vh;
-  `;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f5;
+`
+
+export const TextContainer = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #333;
+`
+
+export const Title = styled.h1`
+  font-size: 50px;
+  font-weight: 700;
+  color: #3b5998;
+  text-align: center;
+`
+
+export const SubTitle = styled.h2`
+  font-size: 30px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+`
+
+export const Content = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
