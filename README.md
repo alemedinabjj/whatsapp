@@ -8,7 +8,7 @@
 
 WebApp de mensagens inspirado no whatsapp
 
-- site final: [pokemon](https://whatsapp-gray.vercel.app/) 
+- site final: [WebApp Clone](https://whatsapp-gray.vercel.app/) 
 
 ## 🚀 Tecnologias
 
