@@ -1,8 +1,8 @@
 <h1 align="center">
-  Pokemon ✔️
+ WebApp de Mensagem ✔️
 </h1>
   
-![Resultado final do projeto](https://github.com/alemedinabjj/pokemon/blob/main/src/assets/preview2.png?raw=true)
+![Resultado final do projeto](https://github.com/alemedinabjj/whatsapp/blob/main/src/assets/preview2.png)
 
 ## 📝 Descrição 
 
