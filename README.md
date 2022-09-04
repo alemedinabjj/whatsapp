@@ -6,7 +6,7 @@
 
 ## 📝 Descrição 
 
-WebApp de mensagens inspirado no whatsapp
+WebApp de mensagens inspirado no whatsapp, ps: projeto responsivo para celular, tablet e desktop
 
 - site final: [WebApp Clone](https://whatsapp-gray.vercel.app/) 
 
