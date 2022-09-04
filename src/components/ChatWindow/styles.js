@@ -32,7 +32,19 @@ export const ChatWindowHeader = styled.div`
 
   @media (max-width: 900px) {
     .buttonMobileBack {
-      display: block;
+      display: flex;
+      height: 100%;
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: 50px;
+        color: #ccc;
+        font-weight: bold;
+
+      }
     }
 
   }
@@ -72,7 +84,13 @@ export const ChatWindowHeaderInfo = styled.div`
     border-radius: 50%;
     margin-left: 15px;
     margin-right: 15px;
+
   }
+  @media (max-width: 900px) {
+      img {
+        margin-left: 0;
+      }
+    }
 `
 
 export const ChatWindowHeaderInfoName = styled.div`

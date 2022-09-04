@@ -8,10 +8,11 @@ import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import SendIcon from '@mui/icons-material/Send'
 import CloseIcon from '@mui/icons-material/Close'
 import MicIcon from '@mui/icons-material/Mic'
-import data from '@emoji-mart/data'
+import data  from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 import { useState, useEffect, useRef } from 'react'
 import { BoyOutlined } from '@mui/icons-material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Api from '../../Api'
 
 export default ({ user, data, mobileOpen, setMobileOpen }) => {
@@ -91,12 +92,12 @@ export default ({ user, data, mobileOpen, setMobileOpen }) => {
   }
 
   return (
-    <S.ChatWindow style={{ transform: !mobileOpen ? "translateX(-2200px)" : '' }}>
+    <S.ChatWindow style={{ transform: !mobileOpen ? "translateX(-1000px)" : '' }}>
       <S.ChatWindowHeader>
         <S.ChatWindowHeaderInfo>
-          <div className="buttonMobileBack" onClick={handleBack}>
-            Back
-          </div>
+          <button className="buttonMobileBack" onClick={handleBack}>
+            <ArrowBackIcon />
+          </button>
           <img src={data.image} alt="" />
           <S.ChatWindowHeaderInfoName>{data.title}</S.ChatWindowHeaderInfoName>
         </S.ChatWindowHeaderInfo>
@@ -117,9 +118,8 @@ export default ({ user, data, mobileOpen, setMobileOpen }) => {
           <MessageItem key={key} data={item} user={user} />
         ))}
       </S.ChatWindowBody>
-      <S.ChatWindowEmojiArea style={{ height: emojiOpen ? '400px' : '0' }}>
+      <S.ChatWindowEmojiArea style={{ height: emojiOpen ? '200px' : '0' }}>
         <Picker
-          data={data}
           onEmojiSelect={handleEmojiClick}
           title="Pick your emoji…"
           skin={6}
@@ -127,8 +127,8 @@ export default ({ user, data, mobileOpen, setMobileOpen }) => {
           theme="light"
           skinTonePositions="none"
           searchPosition="none"
-          size="2em"
-          perLine={37}
+          size="1.5em"
+          perLine={20}
         />
       </S.ChatWindowEmojiArea>
       <S.ChatWindowFooter>
