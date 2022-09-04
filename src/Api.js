@@ -2,8 +2,6 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 
-
-
 import firebaseConfig from './firebaseConfig'
 
 const firebaseApp = firebase.initializeApp(firebaseConfig)
@@ -81,6 +79,17 @@ export default {
         })
       })
   },
+  deleteChat: async (user, chatId) => {
+    await db.collection('chats').doc(chatId).delete()
+
+    db.collection('users')
+      .doc(user.id)
+      .update({
+        chats: firebase.firestore.FieldValue.arrayRemove({
+          chatId: chatId
+        })
+      })
+  },
   onChatList: (userId, setChatList) => {
     return db
       .collection('users')
@@ -139,24 +148,23 @@ export default {
         })
       })
 
-      for(let i in users) {
-        let u = await db.collection('users').doc(users[i]).get()
-        let uData = u.data()
-        if(uData.chats) {
-          let chats = [...uData.chats]
+    for (let i in users) {
+      let u = await db.collection('users').doc(users[i]).get()
+      let uData = u.data()
+      if (uData.chats) {
+        let chats = [...uData.chats]
 
-          for(let e in chats) {
-            if(chats[e].chatId === chatData.chatId) {
-              chats[e].lastMessage = body
-              chats[e].lastMessageDate = now
-            }
+        for (let e in chats) {
+          if (chats[e].chatId === chatData.chatId) {
+            chats[e].lastMessage = body
+            chats[e].lastMessageDate = now
           }
-
-          await db.collection('users').doc(users[i]).update({
-            chats
-          })
         }
+
+        await db.collection('users').doc(users[i]).update({
+          chats
+        })
       }
-      
+    }
   }
 }
