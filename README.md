@@ -16,6 +16,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - ReactJS
 - Javascript
+- Firebase (auth e firestore)
 - Vite
 - Material Icons
 - Emotion
