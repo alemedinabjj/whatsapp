@@ -1,5 +1,35 @@
 import styled from '@emotion/styled'
 
+export const Background = styled.div`
+  background: #ffff;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  z-index: -1;
+
+  .images1 {
+    position: absolute;
+    top: 0%;
+    right: 4%;
+    z-index: 1;
+  }
+  .images2 {
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .images1 {
+      display: none;
+    }
+    .images2 {
+      display: none;
+    }
+`
+
 export const Button = styled.button`
   border: none;
   outline: none;
@@ -9,7 +39,7 @@ export const Button = styled.button`
   height: 54px;
   border-radius: 10px;
   padding: 14px;
-  background:${props => props.background};
+  background: ${props => props.background};
 
   display: flex;
   justify-content: center;
@@ -19,19 +49,16 @@ export const Button = styled.button`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background:${props => props.hover};
+    background: ${props => props.hover};
   }
-  
 
   span {
-    font-family: "Helvetica", sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 20px;
     line-height: 23px;
     color: #ffff;
   }
 `
-
-
 
 export const Login = styled.div`
   display: flex;
@@ -39,6 +66,18 @@ export const Login = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+  padding-block: 100px;
+  padding-inline: 120px;
+
+
+  @media (max-width: 1268px) {
+    padding-block: 50px;
+    padding-inline: 50px;
+  }
 `
 
 export const Container = styled.main`
@@ -49,12 +88,11 @@ export const Container = styled.main`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 
   @media (max-width: 900px) {
     flex-direction: column;
   }
-
 `
 
 export const TextContainer = styled.div`
@@ -67,10 +105,12 @@ export const TextContainer = styled.div`
   text-align: center;
   padding: 0 20px;
   color: #333;
+  position: relative;
+  z-index: 2;
 `
 
 export const Title = styled.h1`
-  font-size: 50px;
+  font-size: ${props => props.size};
   font-weight: 700;
   color: #3b5998;
   text-align: center;
@@ -86,7 +126,7 @@ export const SubTitle = styled.h2`
 export const Content = styled.div`
   width: 50%;
   height: 100%;
-  background-color: #d1d1d1;
+  /* background-color: #d1d1d1; */
   display: flex;
   justify-content: center;
   align-items: center;
