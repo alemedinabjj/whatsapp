@@ -1,14 +1,14 @@
 <h1 align="center">
-  Pokemon ✔️
+ WebApp de Mensagem ✔️
 </h1>
   
-![Resultado final do projeto](https://github.com/alemedinabjj/pokemon/blob/main/src/assets/preview2.png?raw=true)
+![Resultado final do projeto](https://github.com/alemedinabjj/whatsapp/blob/main/src/assets/preview2.png)
 
 ## 📝 Descrição 
 
-WebApp de mensagens inspirado no whatsapp
+WebApp de mensagens inspirado no whatsapp, ps: projeto responsivo para celular, tablet e desktop
 
-- site final: [pokemon](https://whatsapp-gray.vercel.app/) 
+- site final: [WebApp Clone](https://whatsapp-gray.vercel.app/) 
 
 ## 🚀 Tecnologias
 
@@ -16,6 +16,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - ReactJS
 - Javascript
+- Firebase (auth e firestore)
 - Vite
 - Material Icons
 - Emotion
