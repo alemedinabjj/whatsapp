@@ -53,12 +53,14 @@ export default ({ onReceive }) => {
             <S.Title size="58px">Chat</S.Title>
             <S.SubTitle>Entre com sua conta</S.SubTitle>
           </S.TextContainer>
+
           <S.Content>
             <S.Login>
               <S.Title size="20px">
                 Bem-vindo ao webApp de chat <br />
                 Faça login para continuar
               </S.Title>
+
               <S.Button
                 background="#1877F2"
                 hover="#3e92ff"

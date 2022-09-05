@@ -6,7 +6,7 @@ export const Background = styled.div`
   width: 100%;
   display: flex;
   position: relative;
-  z-index: -1;
+
 
   .images1 {
     position: absolute;
@@ -113,7 +113,7 @@ export const TextContainer = styled.div`
 export const Title = styled.h1`
   font-size: ${props => props.size};
   font-weight: 700;
-  color: #3b5998;
+  color: #4adf83;
   text-align: center;
 `
 
