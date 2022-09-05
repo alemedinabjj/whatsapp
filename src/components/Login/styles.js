@@ -28,6 +28,7 @@ export const Background = styled.div`
     .images2 {
       display: none;
     }
+  }
 `
 
 export const Button = styled.button`
